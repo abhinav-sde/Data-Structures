@@ -1,4 +1,3 @@
-package sparse_table;
 
 import java.util.*;
 

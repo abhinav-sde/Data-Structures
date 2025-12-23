@@ -1,4 +1,3 @@
-package segment_tree;
 
 // Segment Tree for Range Sum Query
 public class SegmentTree {

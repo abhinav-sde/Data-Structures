@@ -1,4 +1,3 @@
-package heap;
 
 /**
  * Advanced Heap Problems in Java

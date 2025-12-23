@@ -1,4 +1,3 @@
-package persistent_segment_tree;
 
 import java.util.*;
 

@@ -1,4 +1,3 @@
-package trie;
 
 /**
  * Advanced Trie Problems in Java

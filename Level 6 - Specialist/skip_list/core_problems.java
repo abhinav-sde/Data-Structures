@@ -1,4 +1,3 @@
-package skip_list;
 
 import java.util.*;
 

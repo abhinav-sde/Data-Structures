@@ -59,6 +59,7 @@ This repository has been upgraded from a basic collection to a **FAANG-ready res
 ### 🟠 Level 3: Advanced Problem Solving (SDE2)
 *Goal: Specialized range queries and set management.*
 - [BST (Binary Search Tree)](Level%203%20-%20Advanced%20Problem%20Solving/bst/)
+- [AVL Tree](Level%203%20-%20Advanced%20Problem%20Solving/avl_tree/) ⭐ NEW
 - [Trie (Prefix Tree)](Level%203%20-%20Advanced%20Problem%20Solving/trie/)
 - [Disjoint Set (DSU)](Level%203%20-%20Advanced%20Problem%20Solving/disjoint_set/)
 - [Segment Tree](Level%203%20-%20Advanced%20Problem%20Solving/segment_tree/)
@@ -72,6 +73,7 @@ This repository has been upgraded from a basic collection to a **FAANG-ready res
 - [Red-Black Tree](Level%204%20-%20Senior%20Standards/red_black_tree/)
 - [B+ Tree](Level%204%20-%20Senior%20Standards/bplus_tree/)
 - [B-Tree](Level%204%20-%20Senior%20Standards/btree/)
+- [Interval Tree](Level%204%20-%20Senior%20Standards/interval_tree/) ⭐ NEW
 - [Sparse Table](Level%204%20-%20Senior%20Standards/sparse_table/)
 
 ### 🟣 Level 5: Big Data & Professional Scale (SDE3/Staff)

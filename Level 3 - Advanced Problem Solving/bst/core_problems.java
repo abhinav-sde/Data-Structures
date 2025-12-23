@@ -1,4 +1,3 @@
-package bst;
 
 /**
  * Core BST Problems in Java

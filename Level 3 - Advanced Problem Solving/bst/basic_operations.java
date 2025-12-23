@@ -1,4 +1,3 @@
-package bst;
 
 /**
  * Basic Binary Search Tree Operations in Java

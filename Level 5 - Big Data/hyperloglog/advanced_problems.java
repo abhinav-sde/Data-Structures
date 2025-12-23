@@ -1,4 +1,3 @@
-package hyperloglog;
 
 public class advanced_problems {
     /**

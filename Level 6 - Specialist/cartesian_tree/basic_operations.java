@@ -1,4 +1,3 @@
-package cartesian_tree;
 
 import java.util.*;
 

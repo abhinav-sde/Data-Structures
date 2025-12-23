@@ -1,4 +1,3 @@
-package bloom_filter;
 
 public class advanced_problems {
     // Counting Bloom Filter, Scalable Bloom Filter

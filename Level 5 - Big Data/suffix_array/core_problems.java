@@ -1,4 +1,3 @@
-package suffix_array;
 
 import java.util.*;
 

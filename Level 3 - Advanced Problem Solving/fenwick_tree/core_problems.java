@@ -1,4 +1,3 @@
-package fenwick_tree;
 
 import java.util.*;
 

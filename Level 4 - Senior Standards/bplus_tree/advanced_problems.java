@@ -1,4 +1,3 @@
-package bplus_tree;
 
 public class advanced_problems {
     /**

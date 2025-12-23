@@ -1,4 +1,3 @@
-package segment_tree;
 
 public class advanced_problems {
 

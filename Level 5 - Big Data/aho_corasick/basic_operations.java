@@ -1,4 +1,3 @@
-package aho_corasick;
 
 import java.util.*;
 

@@ -1,4 +1,3 @@
-package count_min_sketch;
 
 import java.util.*;
 

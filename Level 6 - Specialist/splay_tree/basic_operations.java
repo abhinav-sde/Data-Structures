@@ -1,4 +1,3 @@
-package splay_tree;
 
 import java.util.*;
 

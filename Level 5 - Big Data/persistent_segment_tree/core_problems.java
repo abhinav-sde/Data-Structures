@@ -1,4 +1,3 @@
-package persistent_segment_tree;
 
 public class core_problems {
     /**

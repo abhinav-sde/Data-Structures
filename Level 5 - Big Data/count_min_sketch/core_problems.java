@@ -1,4 +1,3 @@
-package count_min_sketch;
 
 public class core_problems {
     /**

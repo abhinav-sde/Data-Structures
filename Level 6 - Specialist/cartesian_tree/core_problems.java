@@ -1,4 +1,3 @@
-package cartesian_tree;
 
 public class core_problems {
     // Range minimum query, Lowest common ancestor

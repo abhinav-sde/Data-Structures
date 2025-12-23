@@ -1,4 +1,3 @@
-package hyperloglog;
 
 import java.util.*;
 

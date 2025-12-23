@@ -1,4 +1,3 @@
-package btree;
 
 public class advanced_problems {
     // B+ Tree, B* Tree variants

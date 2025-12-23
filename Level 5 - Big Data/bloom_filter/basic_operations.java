@@ -1,4 +1,3 @@
-package bloom_filter;
 
 import java.util.*;
 

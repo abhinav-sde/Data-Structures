@@ -1,4 +1,3 @@
-package btree;
 
 public class core_problems {
     // Database indexing, file systems

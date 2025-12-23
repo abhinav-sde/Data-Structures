@@ -1,4 +1,3 @@
-package lfu_cache;
 
 import java.util.*;
 

@@ -1,4 +1,3 @@
-package lfu_cache;
 
 public class advanced_problems {
     /**

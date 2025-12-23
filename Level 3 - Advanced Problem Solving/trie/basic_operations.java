@@ -1,4 +1,3 @@
-package trie;
 
 /**
  * Basic Trie (Prefix Tree) Operations in Java

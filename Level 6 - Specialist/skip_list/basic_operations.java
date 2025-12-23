@@ -1,4 +1,3 @@
-package skip_list;
 
 /**
  * Basic Skip List Operations

@@ -1,4 +1,3 @@
-package aho_corasick;
 
 public class core_problems {
     /**

@@ -1,4 +1,3 @@
-package red_black_tree;
 
 public class core_problems {
     /**

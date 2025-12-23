@@ -1,4 +1,3 @@
-package sparse_table;
 
 public class advanced_problems {
     /**

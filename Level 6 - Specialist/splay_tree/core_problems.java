@@ -1,4 +1,3 @@
-package splay_tree;
 
 public class core_problems {
     // Self-adjusting for frequently accessed items

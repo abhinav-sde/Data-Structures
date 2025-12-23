@@ -1,4 +1,3 @@
-package trie;
 
 /**
  * Core Trie Problems in Java

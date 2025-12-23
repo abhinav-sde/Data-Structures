@@ -1,4 +1,3 @@
-package fenwick_tree;
 
 /**
  * Basic Fenwick Tree (Binary Indexed Tree) Operations

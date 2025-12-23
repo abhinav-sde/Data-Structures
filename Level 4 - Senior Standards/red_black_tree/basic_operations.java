@@ -1,4 +1,3 @@
-package red_black_tree;
 
 /**
  * Basic Red-Black Tree Implementation

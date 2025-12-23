@@ -1,4 +1,3 @@
-package splay_tree;
 
 public class advanced_problems {
     // Cache-oblivious algorithms

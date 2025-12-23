@@ -1,4 +1,3 @@
-package cartesian_tree;
 
 public class advanced_problems {
     // Treap (randomized Cartesian tree)

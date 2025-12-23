@@ -1,4 +1,3 @@
-package deque;
 
 /**
  * Basic Deque (Double-Ended Queue) Operations in Java
