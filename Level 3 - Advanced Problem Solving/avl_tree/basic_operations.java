@@ -1,80 +1,96 @@
-/**
- * AVL Tree Implementation
- * Self-balancing BST with strict height balance (height difference ≤ 1).
- * Guarantees O(log N) for all operations.
- */
+package avl_tree;
+
+import java.util.Scanner;
+
 public class basic_operations {
 
     static class Node {
-        int key, height;
-        Node left, right;
+        int key;
+        int height;
+        Node left;
+        Node right;
 
-        Node(int key) {
-            this.key = key;
-            this.height = 1;
+        Node(int d) {
+            key = d;
+            height = 1;
         }
     }
 
     static class AVLTree {
-        private Node root;
+        Node root;
 
-        private int height(Node node) {
-            return node == null ? 0 : node.height;
+        // Get height of the node
+        int height(Node N) {
+            if (N == null)
+                return 0;
+            return N.height;
         }
 
-        private int getBalance(Node node) {
-            return node == null ? 0 : height(node.left) - height(node.right);
+        // Get max of two integers
+        int max(int a, int b) {
+            return (a > b) ? a : b;
         }
 
-        private Node rightRotate(Node y) {
+        // Right Rotate
+        Node rightRotate(Node y) {
             Node x = y.left;
             Node T2 = x.right;
 
+            // Perform rotation
             x.right = y;
             y.left = T2;
 
-            y.height = Math.max(height(y.left), height(y.right)) + 1;
-            x.height = Math.max(height(x.left), height(x.right)) + 1;
+            // Update heights
+            y.height = max(height(y.left), height(y.right)) + 1;
+            x.height = max(height(x.left), height(x.right)) + 1;
 
+            // Return new root
             return x;
         }
 
-        private Node leftRotate(Node x) {
+        // Left Rotate
+        Node leftRotate(Node x) {
             Node y = x.right;
             Node T2 = y.left;
 
+            // Perform rotation
             y.left = x;
             x.right = T2;
 
-            x.height = Math.max(height(x.left), height(x.right)) + 1;
-            y.height = Math.max(height(y.left), height(y.right)) + 1;
+            // Update heights
+            x.height = max(height(x.left), height(x.right)) + 1;
+            y.height = max(height(y.left), height(y.right)) + 1;
 
+            // Return new root
             return y;
         }
 
-        public void insert(int key) {
-            root = insert(root, key);
+        // Get Balance factor of node N
+        int getBalance(Node N) {
+            if (N == null)
+                return 0;
+            return height(N.left) - height(N.right);
         }
 
-        private Node insert(Node node, int key) {
-            // 1. Standard BST insert
+        Node insert(Node node, int key) {
+            /* 1. Perform the normal BST insertion */
             if (node == null)
-                return new Node(key);
+                return (new Node(key));
 
             if (key < node.key)
                 node.left = insert(node.left, key);
             else if (key > node.key)
                 node.right = insert(node.right, key);
-            else
-                return node; // Duplicate keys not allowed
+            else // Duplicate keys not allowed
+                return node;
 
-            // 2. Update height
-            node.height = 1 + Math.max(height(node.left), height(node.right));
+            /* 2. Update height of this ancestor node */
+            node.height = 1 + max(height(node.left), height(node.right));
 
-            // 3. Get balance factor
+            /* 3. Get the balance factor of this ancestor node to check whether this node became unbalanced */
             int balance = getBalance(node);
 
-            // 4. Rebalance if needed (4 cases)
+            // If this node becomes unbalanced, then there are 4 cases
 
             // Left Left Case
             if (balance > 1 && key < node.left.key)
@@ -96,100 +112,43 @@ public class basic_operations {
                 return leftRotate(node);
             }
 
+            /* return the (unchanged) node pointer */
             return node;
         }
 
-        public void delete(int key) {
-            root = delete(root, key);
-        }
-
-        private Node delete(Node node, int key) {
-            if (node == null)
-                return null;
-
-            if (key < node.key)
-                node.left = delete(node.left, key);
-            else if (key > node.key)
-                node.right = delete(node.right, key);
-            else {
-                // Node to delete found
-                if (node.left == null || node.right == null) {
-                    node = (node.left != null) ? node.left : node.right;
-                } else {
-                    Node temp = minValueNode(node.right);
-                    node.key = temp.key;
-                    node.right = delete(node.right, temp.key);
-                }
-            }
-
-            if (node == null)
-                return null;
-
-            node.height = 1 + Math.max(height(node.left), height(node.right));
-            int balance = getBalance(node);
-
-            // Rebalance
-            if (balance > 1 && getBalance(node.left) >= 0)
-                return rightRotate(node);
-
-            if (balance > 1 && getBalance(node.left) < 0) {
-                node.left = leftRotate(node.left);
-                return rightRotate(node);
-            }
-
-            if (balance < -1 && getBalance(node.right) <= 0)
-                return leftRotate(node);
-
-            if (balance < -1 && getBalance(node.right) > 0) {
-                node.right = rightRotate(node.right);
-                return leftRotate(node);
-            }
-
-            return node;
-        }
-
-        private Node minValueNode(Node node) {
-            Node current = node;
-            while (current.left != null)
-                current = current.left;
-            return current;
-        }
-
-        public void display() {
-            display(root, "", true);
-        }
-
-        private void display(Node node, String indent, boolean last) {
+        // Utility function to print preorder traversal of the tree
+        void preOrder(Node node) {
             if (node != null) {
-                System.out.print(indent);
-                if (last) {
-                    System.out.print("R----");
-                    indent += "   ";
-                } else {
-                    System.out.print("L----");
-                    indent += "|  ";
-                }
-                System.out.println(node.key + " (h=" + node.height + ")");
-                display(node.left, indent, false);
-                display(node.right, indent, true);
+                System.out.print(node.key + " ");
+                preOrder(node.left);
+                preOrder(node.right);
             }
         }
     }
 
     public static void main(String[] args) {
         AVLTree tree = new AVLTree();
-        tree.insert(10);
-        tree.insert(20);
-        tree.insert(30);
-        tree.insert(40);
-        tree.insert(50);
-        tree.insert(25);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("AVL Tree:");
-        tree.display();
+        /* Constructing tree given in the above figure */
+        System.out.println("Inserting: 10, 20, 30, 40, 50, 25");
+        tree.root = tree.insert(tree.root, 10);
+        tree.root = tree.insert(tree.root, 20);
+        tree.root = tree.insert(tree.root, 30);
+        tree.root = tree.insert(tree.root, 40);
+        tree.root = tree.insert(tree.root, 50);
+        tree.root = tree.insert(tree.root, 25); // This causes rotation
 
-        tree.delete(40);
-        System.out.println("\nAfter deleting 40:");
-        tree.display();
+        /* The constructed AVL Tree would be
+             30
+            /  \
+          20   40
+         /  \     \
+        10  25    50
+        */
+        System.out.println("Preorder traversal of constructed AVL tree is :");
+        tree.preOrder(tree.root);
+        System.out.println();
+        scanner.close();
     }
 }
